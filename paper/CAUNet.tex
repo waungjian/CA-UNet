@@ -1,0 +1,138 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+%
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{makecell}
+\usepackage[marginal]{footmisc}
+
+\usepackage{pifont}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbding} 
+\usepackage{fontawesome}
+
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+	colorlinks=true,
+	allcolors=black,
+	pdfstartview=Fit,
+	breaklinks=true}
+
+
+
+\renewcommand{\thefootnote}{}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+
+\begin{document}
+%
+\title{CA-UNet: UNet-like Heterogeneous Architecture of CNN and Attention for Medical Image Segmentation
+% \thanks{Supported by organization x.}
+}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{Jian Wang\inst{1} \and
+Fei Qi\inst{1*} \and
+Jianfei Wu\inst{2}  \and
+Siqi Yan\inst{3}
+% \and
+% Knoll Alois\inst{1}
+}
+
+%
+\authorrunning{Jian Wang et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+
+\institute{Xidian University, Xi'an, China 
+% Xidian University, Xi'an , China \and
+% Xidian University, Xi'an , China 
+% \email{lncs@springer.com}\\
+% \url{http://www.springer.com/gp/computer-science/lncs} \and
+% ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
+% \email{\{abc,lncs\}@uni-heidelberg.de}
+}
+
+%
+\maketitle              % typeset the header of the contribution
+%
+
+
+\begin{abstract}
+Medical image segmentation has wide applications and research value in the field of medical research and practice, greatly improving the efficiency and accuracy of disease diagnosis.In various types of medical segmentation tasks, the encoder-decoder U-shaped heterogenous architecture network, which integrates convolutional neural networks (CNN) and attention mechanisms, has achieved milestone achievements. It empowers the network with strong local feature extraction ability and long-term dependency modeling capability, and has achieved excellent performance in medical image segmentation.However, most of the current heterogeneous networks adopt independent convolutional layers or attention layers in various feature extraction modules, unable to effectively establish dependencies between local and global information, thus failing to fully exploit their advantages.Moreover, due to the small sample characteristic of medical images which often limits the learning capacity of the network model, this article applies full-scale skip connection based on the convolutional attention mechanism to the feature fusion of the encoder and decoder, thereby effectively enhancing the segmentation performance of the network. In experiments involving Synapse multi-organ segmentation(Synapse) dataset, the average DSC of the proposed network reached 84.43\%, and HD95 reached 15.69. At the same time, it showed excellent generalization ability in Automated cardiac diagnosis challenge(ACDC) dataset.
+Code is available at \href{https://github.com/waungjian/CA-UNet.git}{https://github.com/waungjian/CA-UNet.git}
+
+
+
+% \keywords{Medical image segmentation  \and Pure transformer \and Deep learning.}
+\end{abstract}
+%
+%
+%
+\footnote{*Corresponding author}
+% \footnote{$\dagger$ Work done as an intern in Huawei Technologies}
+
+\input{Section/Introduction}
+\input{Section/RelatedWorks}
+\input{Section/Method}
+\input{Section/Experiments}
+\input{Section/Conclusion}
+
+
+
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+
+\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s) 
+\bibliography{CAUNet}
+
+
+% \begin{thebibliography}{8}
+% \bibitem{ref_article1}
+% Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
+
+% \bibitem{ref_lncs1}
+% Author, F., Author, S.: Title of a proceedings paper. In: Editor,
+% F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
+% Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+
+% \bibitem{ref_book1}
+% Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
+% Location (1999)
+
+% \bibitem{ref_proc1}
+% Author, A.-B.: Contribution title. In: 9th International Proceedings
+% on Proceedings, pp. 1--2. Publisher, Location (2010)
+
+% \bibitem{ref_url1}
+% LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
+% Oct 2017
+% \end{thebibliography}
+
+\end{document}
